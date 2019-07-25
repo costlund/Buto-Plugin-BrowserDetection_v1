@@ -1,0 +1,64 @@
+HTTP_USER_AGENT: null
+browser_name: null
+browser_find:
+  Edge:
+    success: false
+    find:
+      - Edge/
+  Safari:
+    success: false
+    find:
+      - Safari/
+  'Internet Explorer':
+    success: false
+    find:
+      - Trident/
+  Firefox:
+    success: false
+    find:
+      - Firefox/
+  Chrome:
+    success: false
+    find:
+      - Chrome/
+browser_solve:
+  edge:
+    name: Edge
+    success:
+      - Edge
+  firefox:
+    name: Firefox
+    success:
+      - Firefox
+  chrome:
+    name: Chrome
+    success:
+      - Chrome
+      - Safari
+  safari:
+    name: Safari
+    success:
+      - Safari
+  internet_explorer:
+    name: Internet Explorer
+    success:
+      - Internet Explorer
+os_name: null
+os_find:
+  'Mac OS X 10':
+    success: false
+    find:
+      - Mac OS X 10.
+  'Windows 10':
+    success: false
+    find:
+      - Windows NT 10.
+os_solve:
+  mac:
+    name: Mac OS X 10
+    success:
+      - Mac OS X 10
+  windows:
+    name: Windows 10
+    success:
+      - Windows 10
