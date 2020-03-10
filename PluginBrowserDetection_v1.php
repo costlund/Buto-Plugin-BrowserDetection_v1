@@ -1,15 +1,12 @@
 <?php
 class PluginBrowserDetection_v1{
+  public $stat = array('os' => array(), 'browser' => array());
   function __construct() {
     wfPlugin::includeonce('wf/yml');
   }
-  public function get_browser($HTTP_USER_AGENT = null){
+  public function get_browser($HTTP_USER_AGENT, $object = false){
     $data = new PluginWfYml(__DIR__.'/data.yml');
-    if($HTTP_USER_AGENT){
-      $data->set('HTTP_USER_AGENT', $HTTP_USER_AGENT);
-    }else{
-      $data->set('HTTP_USER_AGENT', $_SERVER['HTTP_USER_AGENT']);
-    }
+    $data->set('HTTP_USER_AGENT', $HTTP_USER_AGENT);
     /**
      * Browser Find
      */
@@ -68,6 +65,26 @@ class PluginBrowserDetection_v1{
         break;
       }
     }
-    return $data->get();
+    /**
+     * Stat
+     */
+    if(!isset($this->stat['os'][$data->get('os_name')])){
+      $this->stat['os'][$data->get('os_name')] = 1;
+    }else{
+      $this->stat['os'][$data->get('os_name')] = $this->stat['os'][$data->get('os_name')]+1;
+    }
+    if(!isset($this->stat['browser'][$data->get('browser_name')])){
+      $this->stat['browser'][$data->get('browser_name')] = 1;
+    }else{
+      $this->stat['browser'][$data->get('browser_name')] = $this->stat['browser'][$data->get('browser_name')]+1;
+    }
+    /**
+     * 
+     */
+    if(!$object){
+      return $data->get();
+    }else{
+      return $data;
+    }
   }
 }

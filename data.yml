@@ -48,17 +48,51 @@ os_find:
   'Mac OS X 10':
     success: false
     find:
-      - Mac OS X 10.
+      - Mac OS X 10
+  'iOS':
+    success: false
+    find:
+      - iPhone OS
+      - iPad
+  'Android':
+    success: false
+    find:
+      - Android
   'Windows 10':
     success: false
     find:
       - Windows NT 10.
+  'Windows':
+    success: false
+    find:
+      - Windows NT 6.
+      - Windows NT 5.
+  'Linux':
+    success: false
+    find:
+      - Linux
 os_solve:
   mac:
     name: Mac OS X 10
     success:
       - Mac OS X 10
+  ios:
+    name: iOS
+    success:
+      - iOS
+  android:
+    name: Android
+    success:
+      - Android
   windows:
     name: Windows 10
     success:
       - Windows 10
+  windows_old:
+    name: Windows
+    success:
+      - Windows
+  linux:
+    name: Linux
+    success:
+      - Linux
