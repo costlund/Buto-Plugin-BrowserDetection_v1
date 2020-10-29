@@ -4,6 +4,11 @@ class PluginBrowserDetection_v1{
   function __construct() {
     wfPlugin::includeonce('wf/yml');
   }
+  public function sort(){
+    ksort($this->stat['os']);
+    ksort($this->stat['browser']);
+    return null;
+  }
   public function get_browser($HTTP_USER_AGENT, $object = false){
     $data = new PluginWfYml(__DIR__.'/data.yml');
     $data->set('HTTP_USER_AGENT', $HTTP_USER_AGENT);
