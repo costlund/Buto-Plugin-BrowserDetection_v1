@@ -5,6 +5,7 @@ browser_find:
     success: false
     find:
       - Edge/
+      - Edg/
   Safari:
     success: false
     find:
