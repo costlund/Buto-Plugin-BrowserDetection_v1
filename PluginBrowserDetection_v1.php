@@ -17,7 +17,7 @@ class PluginBrowserDetection_v1{
      */
     foreach ($data->get('browser_find') as $key => $value) {
       foreach ($value['find'] as $str) {
-        if(strstr($data->get('HTTP_USER_AGENT'), $str)){
+        if(wfPhpfunc::strstr($data->get('HTTP_USER_AGENT'), $str)){
           $data->set("browser_find/$key/success", true);
           break;
         }
@@ -28,7 +28,7 @@ class PluginBrowserDetection_v1{
      */
     foreach ($data->get('os_find') as $key => $value) {
       foreach ($value['find'] as $str) {
-        if(strstr($data->get('HTTP_USER_AGENT'), $str)){
+        if(wfPhpfunc::strstr($data->get('HTTP_USER_AGENT'), $str)){
           $data->set("os_find/$key/success", true);
           break;
         }
