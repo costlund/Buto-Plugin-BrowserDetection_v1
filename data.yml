@@ -22,6 +22,10 @@ browser_find:
     success: false
     find:
       - Chrome/
+  Facebook:
+    success: false
+    find:
+      - FBAV/
 browser_solve:
   edge:
     name: Edge
@@ -44,6 +48,10 @@ browser_solve:
     name: Internet Explorer
     success:
       - Internet Explorer
+  facebook:
+    name: Facebook
+    success:
+      - Facebook
 os_name: null
 os_find:
   'Mac OS X 10':
